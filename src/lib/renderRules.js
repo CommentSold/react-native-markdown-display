@@ -63,17 +63,17 @@ const renderRules = {
 
   // Emphasis
   strong: (node, children, parent, styles) => (
-    <Text key={node.key} style={styles.strong}>
+    <Text allowFontScaling={false} key={node.key} style={styles.strong}>
       {children}
     </Text>
   ),
   em: (node, children, parent, styles) => (
-    <Text key={node.key} style={styles.em}>
+    <Text allowFontScaling={false} key={node.key} style={styles.em}>
       {children}
     </Text>
   ),
   s: (node, children, parent, styles) => (
-    <Text key={node.key} style={styles.s}>
+    <Text allowFontScaling={false} key={node.key} style={styles.s}>
       {children}
     </Text>
   ),
@@ -123,7 +123,7 @@ const renderRules = {
     if (hasParents(parent, 'bullet_list')) {
       return (
         <View key={node.key} style={styles._VIEW_SAFE_list_item}>
-          <Text
+          <Text allowFontScaling={false}
             style={[modifiedInheritedStylesObj, styles.bullet_list_icon]}
             accessible={false}>
             {Platform.select({
@@ -153,7 +153,7 @@ const renderRules = {
 
       return (
         <View key={node.key} style={styles._VIEW_SAFE_list_item}>
-          <Text style={[modifiedInheritedStylesObj, styles.ordered_list_icon]}>
+          <Text allowFontScaling={false} style={[modifiedInheritedStylesObj, styles.ordered_list_icon]}>
             {listItemNumber}
             {node.markup}
           </Text>
@@ -172,7 +172,7 @@ const renderRules = {
 
   // Code
   code_inline: (node, children, parent, styles, inheritedStyles = {}) => (
-    <Text key={node.key} style={[inheritedStyles, styles.code_inline]}>
+    <Text allowFontScaling={false} key={node.key} style={[inheritedStyles, styles.code_inline]}>
       {node.content}
     </Text>
   ),
@@ -188,7 +188,7 @@ const renderRules = {
     }
 
     return (
-      <Text key={node.key} style={[inheritedStyles, styles.code_block]}>
+      <Text allowFontScaling={false} key={node.key} style={[inheritedStyles, styles.code_block]}>
         {content}
       </Text>
     );
@@ -205,7 +205,7 @@ const renderRules = {
     }
 
     return (
-      <Text key={node.key} style={[inheritedStyles, styles.fence]}>
+      <Text allowFontScaling={false} key={node.key} style={[inheritedStyles, styles.fence]}>
         {content}
       </Text>
     );
@@ -245,7 +245,7 @@ const renderRules = {
 
   // Links
   link: (node, children, parent, styles, onLinkPress) => (
-    <Text
+    <Text allowFontScaling={false}
       key={node.key}
       style={styles.link}
       onPress={() => openUrl(node.attributes.href, onLinkPress)}>
@@ -301,12 +301,12 @@ const renderRules = {
 
   // Text Output
   text: (node, children, parent, styles, inheritedStyles = {}) => (
-    <Text key={node.key} style={[inheritedStyles, styles.text]}>
+    <Text allowFontScaling={false} key={node.key} style={[inheritedStyles, styles.text]}>
       {node.content}
     </Text>
   ),
   textgroup: (node, children, parent, styles) => (
-    <Text key={node.key} style={styles.textgroup}>
+    <Text allowFontScaling={false} key={node.key} style={styles.textgroup}>
       {children}
     </Text>
   ),
@@ -316,12 +316,12 @@ const renderRules = {
     </View>
   ),
   hardbreak: (node, children, parent, styles) => (
-    <Text key={node.key} style={styles.hardbreak}>
+    <Text allowFontScaling={false} key={node.key} style={styles.hardbreak}>
       {'\n'}
     </Text>
   ),
   softbreak: (node, children, parent, styles) => (
-    <Text key={node.key} style={styles.softbreak}>
+    <Text allowFontScaling={false} key={node.key} style={styles.softbreak}>
       {'\n'}
     </Text>
   ),
@@ -333,12 +333,12 @@ const renderRules = {
     </View>
   ),
   inline: (node, children, parent, styles) => (
-    <Text key={node.key} style={styles.inline}>
+    <Text allowFontScaling={false} key={node.key} style={styles.inline}>
       {children}
     </Text>
   ),
   span: (node, children, parent, styles) => (
-    <Text key={node.key} style={styles.span}>
+    <Text allowFontScaling={false} key={node.key} style={styles.span}>
       {children}
     </Text>
   ),

@@ -141,7 +141,7 @@ const Markdown = React.memo(
     }),
     onLinkPress,
     maxTopLevelChildren = null,
-    topLevelMaxExceededItem = <Text key="dotdotdot">...</Text>,
+    topLevelMaxExceededItem = <Text allowFontScaling={false} key="dotdotdot">...</Text>,
     allowedImageHandlers = [
       'data:image/png;base64',
       'data:image/gif;base64',
